@@ -59,27 +59,6 @@ Blending design thinking with front-end development to deliver impactful solutio
 
 ---
 
-## 🚀 Projects
-
-- Zurato Technologies
-- LetzScan
-- GetBackLost
-- DreamWorld Properties
-- Maavis Projects
-- Dizaina Homes
-- Ganga Projects
-- ApneDocs
-- Dwarka Expressway
-- Senior Livings
-- ROF Developers
-- Vision Care Optics
-- Fortune Projects
-
-👉 View all projects on portfolio:
-https://pukanshukumar.github.io/pukanshu-portfolio/
-
----
-
 ## 🎓 Education
 
 - Bachelor of Arts — Delhi University
@@ -92,14 +71,6 @@ https://pukanshukumar.github.io/pukanshu-portfolio/
 📧 Email: pukanshukumar@gmail.com
 📱 Phone: +91 9267971323
 📍 Location: New Delhi, India
-
----
-
-## 🟢 Availability
-
-✔ Open to freelance
-✔ Open to full-time roles
-✔ Open to collaborations
 
 ---
 
