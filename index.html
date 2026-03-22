@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="robots" content="noindex, nofollow">
+    <title>Pukanshu Kumar — UI & UX Designer</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon_io/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      /* ── Projects Grid Override ── */
+      .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        gap: 32px;
+      }
+
+      .project-card {
+        /* background: var(--surface, #111); */
+        /* border: 1px solid rgba(255,255,255,0.07); */
+        padding: 0;
+        border-radius: 12px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.35s cubic-bezier(.22,.97,.48,1), border-color 0.3s;
+      }
+      .project-card:hover {
+        transform: translateY(-6px);
+        /* border-color: var(--accent, #e8c97e); */
+      }
+
+      .project-img-wrap {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        background: #0a0a0a;
+        position: relative;
+      }
+      .project-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        display: block;
+        transition: transform 0.5s cubic-bezier(.22,.97,.48,1);
+        filter: brightness(0.88);
+      }
+      .project-card:hover .project-img-wrap img {
+        transform: scale(1.04);
+        filter: brightness(1);
+      }
+
+      .project-body {
+        padding: 24px 24px 28px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+
+      .project-num {
+        /* font-family: 'Space Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em; */
+        /* color: var(--accent, #e8c97e); */
+        margin: 0 0 8px;
+      }
+      .project-title {
+        /* font-family: 'Playfair Display', serif;
+        font-size: 20px;
+        font-weight: 700; */
+        color: var(--text, #f5f0e8);
+        /* margin: 0 0 10px;
+        line-height: 1.3; */
+      }
+      .project-desc {
+        /* font-size: 14px;
+        line-height: 1.7;
+        color: var(--muted, #888);
+        margin: 0 0 20px; */
+        flex: 1;
+      }
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 18px;
+      }
+      .project-tag {
+        font-family: 'Space Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.08em;
+        padding: 3px 9px;
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 20px;
+        color: var(--muted, #888);
+        text-transform: uppercase;
+      }
+      .project-link {
+        /* font-family: 'Space Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent, #e8c97e);
+        text-decoration: none; */
+        display: inline-flex;
+        /* align-items: center;
+        gap: 6px; */
+      }
+      .project-link::after {
+        content: '↗';
+        font-size: 13px;
+        transition: transform 0.2s;
+      }
+      .project-link:hover::after { transform: translate(2px,-2px); }
+      .project-link.no-link {
+        color: var(--muted, #555);
+        cursor: default;
+        pointer-events: none;
+      }
+      .project-link.no-link::after { display: none; }
+
+      /* Section padding */
+      @media (max-width: 768px) {
+        .projects-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">PK.DESIGN</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-noise"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-number">PK</div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">✦ UI & UX Designer — New Delhi, India</p>
+    <h1 class="hero-name">
+      Pukanshu<br>
+      <em>Kumar.</em>
+    </h1>
+    <p class="hero-tagline">
+      Creative designer crafting intuitive, visually compelling digital experiences — blending artistic flair with solid front-end know-how.
+    </p>
+    <div class="hero-cta">
+      <a href="#experience" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-outline">Get in Touch</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">Scroll to explore</span>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">UI Design <span>✦</span></span>
+    <span class="marquee-item">UX Research <span>✦</span></span>
+    <span class="marquee-item">HTML &amp; CSS <span>✦</span></span>
+    <span class="marquee-item">Figma <span>✦</span></span>
+    <span class="marquee-item">WordPress <span>✦</span></span>
+    <span class="marquee-item">Flutter <span>✦</span></span>
+    <span class="marquee-item">Adobe Creative Suite <span>✦</span></span>
+    <span class="marquee-item">Front-End Dev <span>✦</span></span>
+    <span class="marquee-item">UI Design <span>✦</span></span>
+    <span class="marquee-item">UX Research <span>✦</span></span>
+    <span class="marquee-item">HTML &amp; CSS <span>✦</span></span>
+    <span class="marquee-item">Figma <span>✦</span></span>
+    <span class="marquee-item">WordPress <span>✦</span></span>
+    <span class="marquee-item">Flutter <span>✦</span></span>
+    <span class="marquee-item">Adobe Creative Suite <span>✦</span></span>
+    <span class="marquee-item">Front-End Dev <span>✦</span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-label"><span>01 — About</span></div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <h2 class="section-title" style="margin-bottom: 32px;">
+        Designing experiences that <em style="font-style:italic;color:var(--accent)">feel right.</em>
+      </h2>
+      <p>
+        I'm a <strong>UI & UX Designer</strong> based in New Delhi with <strong>3+ years</strong> of experience turning complex ideas into clean, functional interfaces. I work at the intersection of design and development — equally comfortable in Figma and in code.
+      </p>
+      <p>
+        Currently at <strong>Zurato Technologies</strong>, I design and build websites, landing pages, ands. I believe great design isn't just visual — it's a system, a feeling, and a story.
+      </p>
+      <p>
+        I hold a <strong>Bachelor of Arts from Delhi University</strong> and a Diploma in Computer Science — a blend that informs both my creative sensibility and technical approach.
+      </p>
+    </div>
+    <div class="about-stats reveal reveal-delay-2">
+      <div class="stat-card">
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Years of Experience</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">30+</div>
+        <div class="stat-label">Projects Delivered</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">2</div>
+        <div class="stat-label">Companies Worked At</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">9</div>
+        <div class="stat-label">Tech Skills Mastered</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" style="background: var(--bg);">
+  <div class="section-label"><span>02 — Skills</span></div>
+  <h2 class="section-title reveal" style="margin-bottom: 48px;">Tools & Technologies</h2>
+  <div class="skills-grid">
+    <div class="skill-item reveal"><span class="skill-name">HTML5</span><span class="skill-dot"></span></div>
+    <div class="skill-item reveal reveal-delay-1"><span class="skill-name">CSS3 & SCSS</span><span class="skill-dot"></span></div>
+    <div class="skill-item reveal reveal-delay-2"><span class="skill-name">JavaScript</span><span class="skill-dot"></span></div>
+    <div class="skill-item reveal"><span class="skill-name">Angular</span><span class="skill-dot"></span></div>
+    <div class="skill-item reveal reveal-delay-1"><span class="skill-name">Bootstrap 5</span><span class="skill-dot"></span></div>
+    <div class="skill-item reveal reveal-delay-2"><span class="skill-name">WordPress</span><span class="skill-dot"></span></div>
+    <div class="skill-item reveal"><span class="skill-name">Figma</span><span class="skill-dot"></span></div>
+    <div class="skill-item reveal reveal-delay-1"><span class="skill-name">Adobe Photoshop</span><span class="skill-dot"></span></div>
+    <div class="skill-item reveal reveal-delay-2"><span class="skill-name">Adobe Illustrator</span><span class="skill-dot"></span></div>
+    <div class="skill-item reveal"><span class="skill-name">Flutter</span><span class="skill-dot"></span></div>
+    <div class="skill-item reveal reveal-delay-1"><span class="skill-name">UI Design</span><span class="skill-dot"></span></div>
+    <div class="skill-item reveal reveal-delay-2"><span class="skill-name">UX Research</span><span class="skill-dot"></span></div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+  <div class="section-label"><span>03 — Experience</span></div>
+  <h2 class="section-title reveal" style="margin-bottom: 64px;">Work History</h2>
+  <div class="exp-timeline">
+    <div class="exp-item reveal">
+      <div class="exp-dot"></div>
+      <p class="exp-date">September 2022 — Present</p>
+      <h3 class="exp-role">Web Designer</h3>
+      <p class="exp-company">Zurato Technologies · Gurugram, Haryana</p>
+      <div class="exp-tags">
+        <span class="tag">Figma</span>
+        <span class="tag">HTML/CSS</span>
+        <span class="tag">WordPress</span>
+        <span class="tag">Flutter</span>
+      </div>
+      <ul class="exp-list">
+        <li>Designed and developed websites using Figma, HTML, and CSS</li>
+        <li>Implemented website design changes based on client feedback</li>
+        <li>Built responsive landing pages for various marketing campaigns including real estate</li>
+        <li>Developed and maintained the Zurato Technologies main website</li>
+        <li>Created websites in WordPress (letzscan.com, getbacklost.in, zuratotechnologies.com)</li>
+        <li>Designed and coded a (LetzScan) using the Flutter framework</li>
+      </ul>
+    </div>
+    <div class="exp-item reveal reveal-delay-1">
+      <div class="exp-dot"></div>
+      <p class="exp-date">November 2021 — July 2022</p>
+      <h3 class="exp-role">UI/UX Designer</h3>
+      <p class="exp-company">Inwoin Technologies · Gurugram, Haryana</p>
+      <div class="exp-tags">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Bootstrap</span>
+        <span class="tag">Social Media</span>
+      </div>
+      <ul class="exp-list">
+        <li>Developed and launched the Inwoin Technologies website using HTML, CSS, JavaScript and Bootstrap</li>
+        <li>Ensured website responsiveness and optimal user experience across various devices</li>
+        <li>Created engaging social media content across platforms including Facebook, LinkedIn, and Twitter</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" style="background: var(--bg);">
+  <div class="section-label"><span>04 — Projects</span></div>
+  <h2 class="section-title reveal">Selected Work</h2>
+
+  <div class="projects-grid">
+
+    <!-- 01 Zurato Technologies -->
+    <a class="project-card reveal"  rel="nofollow noopener" target="_blank" href="https://www.zuratotechnologies.com">
+      <div class="project-img-wrap">
+        <img src="images/zuratotechnologies-web.jpg" alt="Zurato Technologies Website" loading="lazy">
+      </div>
+      <div class="project-body">
+        <p class="project-num">01</p>
+        <h3 class="project-title">Zurato Technologies</h3>
+        <p class="project-desc">Designed and developed the full company website with a modern layout, responsive design, and seamless performance.</p>
+        <div class="project-tags">
+          <span class="project-tag">Figma</span>
+          <span class="project-tag">HTML/CSS</span>
+          <span class="project-tag">WordPress</span>
+        </div>
+        <span class="project-link">View Live</span>
+      </div>
+    </a>
+
+    <!-- 02 LetzScan -->
+    <a href="https://www.letzscan.com"  rel="nofollow noopener" target="_blank" class="project-card reveal reveal-delay-1">
+      <div class="project-img-wrap">
+        <img src="images/letzscan-web.jpg" alt="LetzScan" loading="lazy">
+      </div>
+      <div class="project-body">
+        <p class="project-num">02</p>
+        <h3 class="project-title">LetzScan</h3>
+        <p class="project-desc">End-to-end UI design and Flutter development for a mobile scanning application. Handled everything from wireframe to launch.</p>
+        <div class="project-tags">
+          <span class="project-tag">Flutter</span>
+          <span class="project-tag">UI Design</span>
+          <span class="project-tag">WordPress</span>
+        </div>
+        <span class="project-link">View Site</span>
+      </div>
+    </a>
+
+    <!-- 03 GetBackLost -->
+    <a href="https://www.getbacklost.in"  rel="nofollow noopener" target="_blank" class="project-card reveal reveal-delay-2">
+      <div class="project-img-wrap">
+        <img src="images/getbacklost-in-web.jpg" alt="GetBackLost" loading="lazy">
+      </div>
+      <div class="project-body">
+        <p class="project-num">03</p>
+        <h3 class="project-title">GetBackLost</h3>
+        <p class="project-desc">Built a WordPress-powered travel website with custom theme design, performance optimization, and responsive layout.</p>
+        <div class="project-tags">
+          <span class="project-tag">WordPress</span>
+          <span class="project-tag">UI Design</span>
+        </div>
+        <span class="project-link">View Live</span>
+      </div>
+    </a>
+
+    <!-- 04 DreamWorld Properties -->
+    <a  href="https://dreamworldproperties.in/"  rel="nofollow noopener" target="_blank" class="project-card reveal">
+      <div class="project-img-wrap">
+        <img src="images/dreamworldproperties-web.jpg" alt="DreamWorld Properties" loading="lazy">
+      </div>
+      <div class="project-body">
+        <p class="project-num">04</p>
+        <h3 class="project-title">DreamWorld Properties</h3>
+        <p class="project-desc">Full real estate portal with property listings, project pages, and high-conversion landing pages for luxury residential campaigns.</p>
+        <div class="project-tags">
+          <span class="project-tag">HTML/CSS</span>
+          <span class="project-tag">Real Estate</span>
+          <span class="project-tag">Landing Page</span>
+        </div>
+        <span class="project-link">View Live</span>
+      </div>
+    </a>
+
+    <!-- 05 Maavis Projects -->
+    <a href="https://maavisprojects.com/"  rel="nofollow noopener" target="_blank" class="project-card reveal reveal-delay-1">
+      <div class="project-img-wrap">
+        <img src="images/maavisprojects-web.jpg" alt="Maavis Projects" loading="lazy">
+      </div>
+      <div class="project-body">
+        <p class="project-num">05</p>
+        <h3 class="project-title">Maavis Projects</h3>
+        <p class="project-desc">Real estate developer website showcasing residential and commercial projects with a clean, trust-focused design.</p>
+        <div class="project-tags">
+          <span class="project-tag">HTML/CSS</span>
+          <span class="project-tag">Real Estate</span>
+        </div>
+        <span class="project-link">View Live</span>
+      </div>
+    </a>
+
+    <!-- 06 Dizaina Homes -->
+    <a href="https://dizainahomes.com/"  rel="nofollow noopener" target="_blank" class="project-card reveal reveal-delay-2">
+      <div class="project-img-wrap">
+        <img src="images/dizainahomes-web.jpg" alt="Dizaina Homes" loading="lazy">
+      </div>
+      <div class="project-body">
+        <p class="project-num">06</p>
+        <h3 class="project-title">Dizaina Homes</h3>
+        <p class="project-desc">Premium interior design & property website built for a high-end residential brand with an elegant visual identity.</p>
+        <div class="project-tags">
+          <span class="project-tag">UI Design</span>
+          <span class="project-tag">HTML/CSS</span>
+          <span class="project-tag">Real Estate</span>
+        </div>
+        <span class="project-link">View Live</span>
+      </div>
+    </a>
+
+    <!-- 07 Ganga Projects -->
+    <a href="https://gangaprojects.co.in/"  rel="nofollow noopener" target="_blank" class="project-card reveal">
+      <div class="project-img-wrap">
+        <img src="images/gangaprojects-web.jpg" alt="Ganga Projects" loading="lazy">
+      </div>
+      <div class="project-body">
+        <p class="project-num">07</p>
+        <h3 class="project-title">Ganga Projects</h3>
+        <p class="project-desc">Real estate developer brand site with project showcase, lead capture forms, and mobile-first layout.</p>
+        <div class="project-tags">
+          <span class="project-tag">HTML/CSS</span>
+          <span class="project-tag">Real Estate</span>
+        </div>
+        <span class="project-link">View Live</span>
+      </div>
+    </a>
+
+    <!-- 08 ApneDocs -->
+    <a href="https://apnedocs.com/"  rel="nofollow noopener" target="_blank" class="project-card reveal reveal-delay-1">
+      <div class="project-img-wrap">
+        <img src="images/apnedocs-web.jpg" alt="ApneDocs" loading="lazy">
+      </div>
+      <div class="project-body">
+        <p class="project-num">08</p>
+        <h3 class="project-title">ApneDocs</h3>
+        <p class="project-desc">Document services platform designed for clarity and speed — structured UX to guide users through complex documentation workflows.</p>
+        <div class="project-tags">
+          <span class="project-tag">UI/UX</span>
+          <span class="project-tag">HTML/CSS</span>
+        </div>
+        <span class="project-link">View Live</span>
+      </div>
+    </a>
+
+    <!-- 09 Dwarka Expressway -->
+    <a href="https://dwarka-xpressway.com/"  rel="nofollow noopener" target="_blank" class="project-card reveal reveal-delay-2">
+      <div class="project-img-wrap">
+        <img src="images/dwarka-xpressway-web.jpg" alt="Dwarka Expressway" loading="lazy">
+      </div>
+      <div class="project-body">
+        <p class="project-num">09</p>
+        <h3 class="project-title">Dwarka Expressway</h3>
+        <p class="project-desc">Targeted real estate landing portal for the Dwarka Expressway corridor, featuring project listings and inquiry funnels.</p>
+        <div class="project-tags">
+          <span class="project-tag">Landing Page</span>
+          <span class="project-tag">Real Estate</span>
+        </div>
+        <span class="project-link">View Live</span>
+      </div>
+    </a>
+
+    <!-- 10 Senior Livings -->
+    <a href="https://seniorlivings.in/"  rel="nofollow noopener" target="_blank" class="project-card reveal">
+      <div class="project-img-wrap">
+        <img src="images/seniorlivings-web.jpg" alt="Senior Livings" loading="lazy">
+      </div>
+      <div class="project-body">
+        <p class="project-num">10</p>
+        <h3 class="project-title">Senior Livings</h3>
+        <p class="project-desc">Warm, accessible website for a senior living real estate brand — designed with large type, clear hierarchy, and calming aesthetics.</p>
+        <div class="project-tags">
+          <span class="project-tag">HTML/CSS</span>
+          <span class="project-tag">UI Design</span>
+          <span class="project-tag">Real Estate</span>
+        </div>
+        <span class="project-link">View Live</span>
+      </div>
+    </a>
+
+    <!-- 11 Gwal Pahari -->
+    <a href="https://gwalpahari.com/"  rel="nofollow noopener" target="_blank" class="project-card reveal reveal-delay-1">
+      <div class="project-img-wrap">
+        <img src="images/gwalpahari-web.jpg" alt="Gwal Pahari" loading="lazy">
+      </div>
+      <div class="project-body">
+        <p class="project-num">11</p>
+        <h3 class="project-title">Gwal Pahari</h3>
+        <p class="project-desc">Location-specific real estate microsite for Gwal Pahari, Gurgaon — driving project awareness and lead generation.</p>
+        <div class="project-tags">
+          <span class="project-tag">Landing Page</span>
+          <span class="project-tag">Real Estate</span>
+        </div>
+        <span class="project-link">View Live</span>
+      </div>
+    </a>
+
+    <!-- 12 ROF Developers -->
+    <a href="https://rofdevelopers.co.in/"  rel="nofollow noopener" target="_blank" class="project-card reveal reveal-delay-2">
+      <div class="project-img-wrap">
+        <img src="images/rofdevelopers-web.jpg" alt="ROF Developers" loading="lazy">
+      </div>
+      <div class="project-body">
+        <p class="project-num">12</p>
+        <h3 class="project-title">ROF Developers</h3>
+        <p class="project-desc">Developer brand site with project portfolio, investor information, and mobile-optimised property pages.</p>
+        <div class="project-tags">
+          <span class="project-tag">HTML/CSS</span>
+          <span class="project-tag">Real Estate</span>
+        </div>
+        <span class="project-link">View Live</span>
+      </div>
+    </a>
+
+    <!-- 14 Hero The Palatial -->
+    <a href="https://herothepalatial.in/"  rel="nofollow noopener" target="_blank" class="project-card reveal reveal-delay-1">
+      <div class="project-img-wrap">
+        <img src="images/herothepalatial-web.jpg" alt="Hero The Palatial" loading="lazy">
+      </div>
+      <div class="project-body">
+        <p class="project-num">14</p>
+        <h3 class="project-title">Hero The Palatial</h3>
+        <p class="project-desc">Luxury residential project landing page for Hero Realty — designed with premium visual language and conversion-focused layout.</p>
+        <div class="project-tags">
+          <span class="project-tag">Landing Page</span>
+          <span class="project-tag">Luxury</span>
+          <span class="project-tag">Real Estate</span>
+        </div>
+        <span class="project-link">View Live</span>
+      </div>
+    </a>
+
+    <!-- 15 Gurgaon Rent -->
+    <a href="https://gurgaon.rent/"  rel="nofollow noopener" target="_blank" class="project-card reveal reveal-delay-2">
+      <div class="project-img-wrap">
+        <img src="images/gurgaon-rent-web.jpg" alt="Gurgaon Rent" loading="lazy">
+      </div>
+      <div class="project-body">
+        <p class="project-num">15</p>
+        <h3 class="project-title">Gurgaon Rent</h3>
+        <p class="project-desc">Rental property portal for Gurgaon — intuitive search-first UX with listing cards and inquiry flows.</p>
+        <div class="project-tags">
+          <span class="project-tag">UI/UX</span>
+          <span class="project-tag">Real Estate</span>
+        </div>
+        <span class="project-link">View Live</span>
+      </div>
+    </a>
+
+    <!-- 16 Seggo Vias -->
+    <a href="https://seggovias.com/"  rel="nofollow noopener" target="_blank" class="project-card reveal">
+      <div class="project-img-wrap">
+        <img src="images/seggovias-web.jpg" alt="Seggo Vias" loading="lazy">
+      </div>
+      <div class="project-body">
+        <p class="project-num">16</p>
+        <h3 class="project-title">Seggo Vias</h3>
+        <p class="project-desc">Modern business website with refined typography, clean layout, and a professional brand presentation.</p>
+        <div class="project-tags">
+          <span class="project-tag">HTML/CSS</span>
+          <span class="project-tag">UI Design</span>
+        </div>
+        <span class="project-link">View Live</span>
+      </div>
+    </a>
+
+    <!-- 17 GADS India -->
+    <a href="https://www.gadsindia.in/"  rel="nofollow noopener" target="_blank" class="project-card reveal reveal-delay-1">
+      <div class="project-img-wrap">
+        <img src="images/gadsindia-in-web.jpg" alt="GADS India" loading="lazy">
+      </div>
+      <div class="project-body">
+        <p class="project-num">17</p>
+        <h3 class="project-title">GADS India</h3>
+        <p class="project-desc">Corporate website for an advertising and marketing services company — built for brand authority and lead generation.</p>
+        <div class="project-tags">
+          <span class="project-tag">HTML/CSS</span>
+          <span class="project-tag">UI Design</span>
+        </div>
+        <span class="project-link">View Live</span>
+      </div>
+    </a>
+
+    <!-- 19 Vision Care Optics -->
+    <a href="https://visioncareoptics.com/"  rel="nofollow noopener" target="_blank" class="project-card reveal">
+      <div class="project-img-wrap">
+        <img src="images/visioncareoptics-web.jpg" alt="Vision Care Optics" loading="lazy">
+      </div>
+      <div class="project-body">
+        <p class="project-num">19</p>
+        <h3 class="project-title">Vision Care Optics</h3>
+        <p class="project-desc">Healthcare retail website for an optical store — product catalogue, appointment booking, and a clean medical-friendly UI.</p>
+        <div class="project-tags">
+          <span class="project-tag">HTML/CSS</span>
+          <span class="project-tag">Healthcare</span>
+          <span class="project-tag">UI Design</span>
+        </div>
+        <span class="project-link">View Live</span>
+      </div>
+    </a>
+
+    <!-- 20 Fortune Projects -->
+    <a href="https://fortuneprojects.in/"  rel="nofollow noopener" target="_blank" class="project-card reveal reveal-delay-1">
+      <div class="project-img-wrap">
+        <img src="images/fortuneprojects-in-web.jpg" alt="Fortune Projects" loading="lazy">
+      </div>
+      <div class="project-body">
+        <p class="project-num">20</p>
+        <h3 class="project-title">Fortune Projects</h3>
+        <p class="project-desc">Real estate developer website with project highlights, floor plans, and a streamlined lead capture experience.</p>
+        <div class="project-tags">
+          <span class="project-tag">HTML/CSS</span>
+          <span class="project-tag">Real Estate</span>
+        </div>
+        <span class="project-link">View Live</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <div class="cb1"></div><div class="cb2"></div>
+  <div class="section-label" style="justify-content: center;"><span>05 — Contact</span></div>
+  <h2 class="contact-title reveal">
+    Let's Work<br><em>Together.</em>
+  </h2>
+  <p class="contact-sub reveal reveal-delay-1">
+    Have a project in mind? I'd love to hear about it. Let's create something great together.
+  </p>
+  <div class="reveal reveal-delay-2">
+    <a href="mailto:pukanshukumar@gmail.com" class="btn-primary">Send an Email</a>
+  </div>
+
+  <div class="contact-details reveal reveal-delay-3">
+    <div class="contact-item">
+      <p class="contact-label">Email</p>
+      <p class="contact-value"><a href="mailto:pukanshukumar@gmail.com">pukanshukumar@gmail.com</a></p>
+    </div>
+    <div class="contact-item">
+      <p class="contact-label">Phone</p>
+      <p class="contact-value"><a href="tel:9267971323">+91 9267971323</a></p>
+    </div>
+    <div class="contact-item">
+      <p class="contact-label">Location</p>
+      <p class="contact-value">New Delhi, India — 110037</p>
+    </div>
+    <div class="contact-item">
+      <p class="contact-label">Availability</p>
+      <p class="contact-value" style="color: #5dde8a;">Open to Opportunities</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-copy">© 2026 Pukanshu Kumar — UI & UX Designer</p>
+  <div class="footer-right">
+    <a href="mailto:pukanshukumar@gmail.com">Email</a>
+    <a href="tel:9267971323">Phone</a>
+    <a href="#home">Back to Top ↑</a>
+  </div>
+</footer>
+
+<script>
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const follower = document.getElementById('cursorFollower');
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    follower.style.left = e.clientX + 'px';
+    follower.style.top = e.clientY + 'px';
+  });
+
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => observer.observe(r));
+</script>
+</body>
+</html>
