@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Dreamworld Properties | Trusted Real Estate Experts in Gurgaon</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #0e2820;
+    --forest-mid: #163320;
+    --forest-light: #1f4a2f;
+    --gold: #c8962a;
+    --gold-light: #e0b84a;
+    --gold-pale: #f5e4b8;
+    --cream: #faf6ef;
+    --white: #ffffff;
+    --text-dark: #0e2820;
+    --text-mid: #2d4a38;
+    --text-muted: #6b8c77;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(14,40,32,0.97);
+    backdrop-filter: blur(12px);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5vw; height: 72px;
+    border-bottom: 1px solid rgba(200,150,42,0.25);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--white); font-weight: 300; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold);
+    color: var(--forest) !important;
+    padding: 0.5rem 1.4rem;
+    border-radius: 2px;
+    font-weight: 600 !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--forest) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--forest);
+    position: relative;
+    display: flex; align-items: center;
+    overflow: hidden;
+    padding-top: 72px;
+  }
+  .hero-bg-pattern {
+    position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(45deg, rgba(200,150,42,0.04) 0, rgba(200,150,42,0.04) 1px, transparent 0, transparent 50%),
+      repeating-linear-gradient(-45deg, rgba(200,150,42,0.03) 0, rgba(200,150,42,0.03) 1px, transparent 0, transparent 50%);
+    background-size: 30px 30px;
+  }
+  .hero-glow {
+    position: absolute;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(200,150,42,0.12) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .hero-glow-2 {
+    position: absolute;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(31,74,47,0.6) 0%, transparent 70%);
+    bottom: -50px; left: 0;
+    border-radius: 50%;
+  }
+  .hero-inner {
+    position: relative; z-index: 2;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center;
+    max-width: 1200px; margin: 0 auto;
+    padding: 6rem 5vw;
+    width: 100%;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(200,150,42,0.15);
+    border: 1px solid rgba(200,150,42,0.4);
+    color: var(--gold-light);
+    font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 0.4rem 1rem; border-radius: 2px;
+    margin-bottom: 2rem;
+    animation: fadeUp 0.8s ease forwards;
+  }
+  .hero-badge::before {
+    content: ''; display: block;
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(1.5)} }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 600; line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.9s ease 0.1s both;
+  }
+  .hero-title .accent { color: var(--gold); font-style: italic; }
+  .hero-desc {
+    color: rgba(255,255,255,0.65);
+    font-size: 1.05rem; line-height: 1.8;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    animation: fadeUp 0.9s ease 0.2s both;
+  }
+  .hero-actions {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeUp 0.9s ease 0.3s both;
+  }
+  .btn-gold {
+    background: var(--gold);
+    color: var(--forest);
+    padding: 0.85rem 2rem;
+    border: none; border-radius: 2px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600; font-size: 0.9rem;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    cursor: pointer; text-decoration: none;
+    transition: all 0.25s;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+  }
+  .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(200,150,42,0.35); }
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    padding: 0.85rem 2rem;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 2px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500; font-size: 0.9rem;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    cursor: pointer; text-decoration: none;
+    transition: all 0.25s;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* Hero visual side */
+  .hero-visual {
+    position: relative;
+    animation: fadeLeft 1s ease 0.3s both;
+  }
+  .hero-img-frame {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .hero-img-frame::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, var(--gold), transparent 60%, var(--gold));
+    border-radius: 4px;
+    z-index: -1;
+  }
+  .hero-placeholder {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, var(--forest-light) 0%, var(--forest-mid) 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 1rem;
+    border-radius: 4px;
+    border: 1px solid rgba(200,150,42,0.3);
+  }
+  .hero-placeholder svg { width: 80px; height: 80px; opacity: 0.4; }
+  .hero-placeholder p { color: rgba(255,255,255,0.3); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
+
+  .stats-float {
+    position: absolute;
+    bottom: -2rem; left: -3rem;
+    background: var(--gold);
+    color: var(--forest);
+    padding: 1.2rem 1.8rem;
+    border-radius: 4px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+  .stats-float .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem; font-weight: 700;
+    line-height: 1;
+  }
+  .stats-float .label {
+    font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    opacity: 0.8;
+  }
+  .trust-tag {
+    position: absolute;
+    top: 2rem; right: -2rem;
+    background: rgba(14,40,32,0.95);
+    border: 1px solid rgba(200,150,42,0.4);
+    color: var(--gold-light);
+    padding: 0.8rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.8rem; font-weight: 500;
+    backdrop-filter: blur(8px);
+  }
+  .trust-tag strong { display: block; font-size: 1.1rem; color: var(--white); font-family: 'Cormorant Garamond', serif; }
+
+  /* breadcrumb */
+  .breadcrumb {
+    position: absolute; bottom: 2rem; left: 5vw;
+    display: flex; align-items: center; gap: 0.5rem;
+    color: rgba(255,255,255,0.4); font-size: 0.8rem;
+    z-index: 2;
+  }
+  .breadcrumb a { color: var(--gold); text-decoration: none; }
+  .breadcrumb span { opacity: 0.6; }
+
+  @keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes fadeLeft { from{opacity:0;transform:translateX(40px)} to{opacity:1;transform:translateX(0)} }
+
+  /* ── STATS BAND ── */
+  .stats-band {
+    background: var(--forest-mid);
+    border-top: 1px solid rgba(200,150,42,0.2);
+    border-bottom: 1px solid rgba(200,150,42,0.2);
+    padding: 3.5rem 5vw;
+    margin-top: 3rem;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    max-width: 1200px; margin: 0 auto;
+    background: rgba(200,150,42,0.15);
+  }
+  .stat-item {
+    background: var(--forest-mid);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    position: relative;
+    transition: background 0.3s;
+  }
+  .stat-item:hover { background: rgba(200,150,42,0.08); }
+  .stat-icon {
+    width: 48px; height: 48px;
+    background: rgba(200,150,42,0.15);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1rem;
+  }
+  .stat-icon svg { width: 22px; height: 22px; fill: var(--gold); }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem; font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-num .plus { font-size: 1.8rem; }
+  .stat-label {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.8rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    margin-top: 0.4rem;
+  }
+
+  /* ── SECTION SHARED ── */
+  .section { padding: 6rem 5vw; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-tag {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 1rem;
+    padding-left: 3rem;
+    position: relative;
+  }
+  .section-tag::before {
+    content: '';
+    position: absolute; left: 0; top: 50%;
+    width: 2rem; height: 1px;
+    background: var(--gold);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600; line-height: 1.15;
+    color: var(--forest);
+    margin-bottom: 1.5rem;
+  }
+  .section-title.light { color: var(--white); }
+
+  /* ── WHO WE ARE ── */
+  .who-section { background: var(--cream); }
+  .who-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: center;
+  }
+  .who-text p {
+    color: var(--text-mid);
+    font-size: 1rem; line-height: 1.9;
+    margin-bottom: 1.2rem;
+    font-weight: 300;
+  }
+  .who-text p strong { font-weight: 600; color: var(--forest); }
+  .who-pillars {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1rem; margin-top: 2rem;
+  }
+  .pillar {
+    background: var(--white);
+    border: 1px solid rgba(14,40,32,0.1);
+    border-left: 3px solid var(--gold);
+    padding: 1.2rem;
+    border-radius: 0 4px 4px 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .pillar:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(14,40,32,0.08); }
+  .pillar h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--forest); margin-bottom: 0.3rem;
+  }
+  .pillar p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+
+  /* side visual */
+  .who-visual {
+    position: relative;
+  }
+  .who-img-box {
+    background: linear-gradient(135deg, var(--forest-light), var(--forest));
+    border-radius: 4px;
+    aspect-ratio: 3/4;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(200,150,42,0.3);
+  }
+  .who-img-box::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, rgba(14,40,32,0.9));
+  }
+  .who-img-watermark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 7rem; font-weight: 700;
+    color: rgba(200,150,42,0.07);
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    white-space: nowrap;
+    pointer-events: none;
+    letter-spacing: -0.02em;
+  }
+  .who-quote {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 2rem;
+    z-index: 2;
+  }
+  .who-quote blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 400; font-style: italic;
+    color: var(--gold-light);
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+  }
+  .who-quote cite {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.8rem; letter-spacing: 0.1em;
+    font-style: normal; text-transform: uppercase;
+  }
+  .who-badge {
+    position: absolute; top: -1.5rem; right: -1.5rem;
+    width: 110px; height: 110px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    box-shadow: 0 12px 40px rgba(200,150,42,0.4);
+    color: var(--forest);
+    text-align: center;
+  }
+  .who-badge .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 700; line-height: 1;
+  }
+  .who-badge .lbl {
+    font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    line-height: 1.3;
+  }
+
+  /* ── WHY US ── */
+  .why-section { background: var(--forest); position: relative; overflow: hidden; }
+  .why-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(0deg, rgba(200,150,42,0.03) 0, rgba(200,150,42,0.03) 1px, transparent 0, transparent 60px);
+  }
+  .why-inner { position: relative; z-index: 1; }
+  .why-lead {
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    text-align: center;
+  }
+  .why-lead p {
+    color: rgba(255,255,255,0.6);
+    font-size: 1.05rem; line-height: 1.8; font-weight: 300;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .feature-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(200,150,42,0.15);
+    border-radius: 4px;
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    cursor: default;
+  }
+  .feature-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s;
+  }
+  .feature-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(200,150,42,0.4); transform: translateY(-4px); }
+  .feature-card:hover::before { transform: scaleX(1); }
+  .feature-card:hover .fc-icon { background: var(--gold); }
+  .feature-card:hover .fc-icon svg { fill: var(--forest); }
+  .fc-icon {
+    width: 56px; height: 56px;
+    background: rgba(200,150,42,0.15);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: background 0.3s;
+  }
+  .fc-icon svg { width: 26px; height: 26px; fill: var(--gold); transition: fill 0.3s; }
+  .fc-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 700;
+    color: var(--white); margin-bottom: 0.8rem;
+  }
+  .fc-desc {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.88rem; line-height: 1.7; font-weight: 300;
+  }
+  .fc-num {
+    position: absolute; bottom: 1.5rem; right: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem; font-weight: 700;
+    color: rgba(200,150,42,0.06);
+    line-height: 1;
+  }
+
+  /* ── MISSION/VISION ── */
+  .mv-section { background: var(--cream); }
+  .mv-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .mv-card {
+    padding: 3rem;
+    border-radius: 4px;
+    position: relative; overflow: hidden;
+  }
+  .mv-card.mission {
+    background: var(--forest);
+    border: 1px solid rgba(200,150,42,0.2);
+  }
+  .mv-card.vision {
+    background: var(--white);
+    border: 1px solid rgba(14,40,32,0.1);
+  }
+  .mv-card .label {
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .mv-card.mission .label { color: var(--gold); }
+  .mv-card.vision .label { color: var(--gold); }
+  .mv-card .label::after {
+    content: '';
+    flex: 1; height: 1px;
+    background: currentColor;
+    opacity: 0.3;
+  }
+  .mv-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 600;
+    line-height: 1.3; margin-bottom: 1.2rem;
+  }
+  .mv-card.mission h3 { color: var(--white); }
+  .mv-card.vision h3 { color: var(--forest); }
+  .mv-card p {
+    font-size: 0.95rem; line-height: 1.8; font-weight: 300;
+  }
+  .mv-card.mission p { color: rgba(255,255,255,0.65); }
+  .mv-card.vision p { color: var(--text-mid); }
+  .mv-deco {
+    position: absolute; bottom: -2rem; right: -2rem;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    opacity: 0.06;
+  }
+  .mv-card.mission .mv-deco { background: var(--gold); }
+  .mv-card.vision .mv-deco { background: var(--forest); }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 100%);
+    padding: 6rem 5vw;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(200,150,42,0.12) 0%, transparent 70%);
+  }
+  .cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+  .cta-inner h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 600; color: var(--white);
+    line-height: 1.2; margin-bottom: 1rem;
+  }
+  .cta-inner h2 em { color: var(--gold); font-style: italic; }
+  .cta-inner p {
+    color: rgba(255,255,255,0.6);
+    font-size: 1rem; line-height: 1.7; font-weight: 300;
+    margin-bottom: 2.5rem;
+  }
+  .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .cta-phone {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    color: var(--gold-light); font-size: 1.1rem; font-weight: 500;
+    text-decoration: none; margin-top: 2rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #080f0b;
+    padding: 3rem 5vw 2rem;
+    border-top: 1px solid rgba(200,150,42,0.15);
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+  }
+  .footer-brand .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 700;
+    color: var(--gold); margin-bottom: 1rem;
+    display: block;
+  }
+  .footer-brand p {
+    color: rgba(255,255,255,0.4);
+    font-size: 0.85rem; line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  .social-links { display: flex; gap: 0.8rem; }
+  .social-links a {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(200,150,42,0.3);
+    border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none; font-size: 0.85rem;
+    transition: all 0.2s;
+  }
+  .social-links a:hover { border-color: var(--gold); color: var(--gold); }
+  .footer-col h5 {
+    color: var(--white); font-size: 0.8rem;
+    font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; margin-bottom: 1.2rem;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 0.6rem; }
+  .footer-col ul li a {
+    color: rgba(255,255,255,0.4); text-decoration: none;
+    font-size: 0.85rem; transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: var(--gold); }
+  .footer-bottom {
+    max-width: 1200px; margin: 2rem auto 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex; align-items: center; justify-content: space-between;
+    color: rgba(255,255,255,0.25); font-size: 0.78rem;
+  }
+  .footer-bottom span { color: var(--gold); }
+
+  /* Scroll reveal */
+  .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-left { opacity: 0; transform: translateX(-30px); transition: all 0.7s ease; }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+  .reveal-right { opacity: 0; transform: translateX(30px); transition: all 0.7s ease; }
+  .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-visual { order: -1; }
+    .stats-grid { grid-template-columns: repeat(3,1fr); }
+    .who-grid, .features-grid, .mv-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Dream<span>world</span> Properties</a>
+  <ul class="nav-links">
+    <li><a href="#">Projects</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Blogs</a></li>
+    <li><a href="#">Career</a></li>
+    <li><a href="#" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">Established Since 2010</div>
+      <h1 class="hero-title">
+        About<br>
+        <span class="accent">Dreamworld</span><br>
+        Properties
+      </h1>
+      <p class="hero-desc">
+        Turning real estate dreams into tangible reality for over 14 years. We guide clients across Gurgaon with expert advice, market insights, and transparent services — every step of the way.
+      </p>
+      <div class="hero-actions">
+        <a href="#why-us" class="btn-gold">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+          Why Choose Us
+        </a>
+        <a href="tel:+918860606770" class="btn-outline">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.97 11 19.79 19.79 0 01.9 2.38 2 2 0 012.88.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Get Consultation
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img-frame">
+        <div class="hero-placeholder">
+          <svg viewBox="0 0 80 80" fill="none">
+            <path d="M10 70V35L40 10L70 35V70H50V50H30V70H10Z" fill="rgba(200,150,42,0.35)" stroke="rgba(200,150,42,0.6)" stroke-width="1.5"/>
+            <rect x="35" y="50" width="10" height="20" fill="rgba(200,150,42,0.5)"/>
+          </svg>
+          <p>Company Image</p>
+        </div>
+      </div>
+      <div class="stats-float">
+        <div class="num">3,700<span style="font-size:1.5rem">+</span></div>
+        <div class="label">Happy Clients</div>
+      </div>
+      <div class="trust-tag">
+        <strong>2,100+</strong>
+        Properties Sold
+      </div>
+    </div>
+  </div>
+  <div class="breadcrumb">
+    <a href="#">Home</a>
+    <span>›</span>
+    <span>About Us</span>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<div class="stats-band">
+  <div class="stats-grid">
+    <div class="stat-item reveal">
+      <div class="stat-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <div class="stat-num">3,700<span class="plus">+</span></div>
+      <div class="stat-label">Satisfied Customers</div>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:0.1s">
+      <div class="stat-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="stat-num">2,100<span class="plus">+</span></div>
+      <div class="stat-label">Properties Sold</div>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:0.2s">
+      <div class="stat-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+      </div>
+      <div class="stat-num">111<span class="plus">+</span></div>
+      <div class="stat-label">Dealer Network</div>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:0.3s">
+      <div class="stat-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="stat-num">1,100<span class="plus">+</span></div>
+      <div class="stat-label">Properties Rented</div>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:0.4s">
+      <div class="stat-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div class="stat-num">14<span class="plus">+</span></div>
+      <div class="stat-label">Years in Industry</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHO WE ARE -->
+<section class="section who-section">
+  <div class="section-inner">
+    <div class="who-grid">
+      <div class="who-text reveal-left">
+        <div class="section-tag">Our Story</div>
+        <h2 class="section-title">Who We Are</h2>
+        <p><strong>Dreamworld Properties has been serving the real estate industry since 2010</strong> with an enthusiastic, motivated team. We are not merely a real estate agency — we are a principle of collectivism, honesty, and loyalty.</p>
+        <p>We regularly cater to the growing demand of residents — whether Indians or NRIs — in their search for the ideal residential flats, houses, plots, farmhouses, office premises, shopping malls, and several other investments.</p>
+        <p>Our power lies in the deep understanding of the Indian Real Estate Market and our ability to forecast price trends. Our dedicated team scientifically analyses buyers' requirements and methodically delivers solutions to derive maximum economic value.</p>
+        <div class="who-pillars">
+          <div class="pillar">
+            <h4>Collectivism</h4>
+            <p>Working together with clients as true partners</p>
+          </div>
+          <div class="pillar">
+            <h4>Honesty</h4>
+            <p>Transparent dealings and clear communication</p>
+          </div>
+          <div class="pillar">
+            <h4>Market Insight</h4>
+            <p>Deep NCR market knowledge since 2010</p>
+          </div>
+          <div class="pillar">
+            <h4>Long-term Trust</h4>
+            <p>Relationships built on results, not promises</p>
+          </div>
+        </div>
+      </div>
+      <div class="who-visual reveal-right">
+        <div class="who-img-box">
+          <div class="who-img-watermark">DW</div>
+          <div class="who-quote">
+            <blockquote>"Forming long-term relationships that seize the right opportunities."</blockquote>
+            <cite>— Dreamworld Properties, Since 2010</cite>
+          </div>
+        </div>
+        <div class="who-badge">
+          <div class="num">14+</div>
+          <div class="lbl">Years of<br>Excellence</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section why-section" id="why-us">
+  <div class="section-inner why-inner">
+    <div class="why-lead reveal">
+      <div class="section-tag" style="color:var(--gold);">Our Strengths</div>
+      <h2 class="section-title light">Why Dreamworld Properties?</h2>
+      <p>At Dreamworld Properties, we are deeply committed to your real estate success. We provide exceptional, tailored solutions — combining industry knowledge with creativity to deliver results that truly matter to you.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal" style="transition-delay:0s">
+        <div class="fc-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="fc-title">Market Intelligence</div>
+        <p class="fc-desc">14+ years of deep market analysis and price forecasting across Delhi NCR helps you make smarter investment decisions.</p>
+        <div class="fc-num">01</div>
+      </div>
+      <div class="feature-card reveal" style="transition-delay:0.1s">
+        <div class="fc-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="fc-title">Dedicated Team</div>
+        <p class="fc-desc">Our trained professionals have exhaustive knowledge of the industry and work tirelessly to serve your unique requirements.</p>
+        <div class="fc-num">02</div>
+      </div>
+      <div class="feature-card reveal" style="transition-delay:0.2s">
+        <div class="fc-icon">
+          <svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+        </div>
+        <div class="fc-title">Full Spectrum Service</div>
+        <p class="fc-desc">From residential apartments and plots to commercial spaces and farmhouses — we cover every real estate need under one roof.</p>
+        <div class="fc-num">03</div>
+      </div>
+      <div class="feature-card reveal" style="transition-delay:0.3s">
+        <div class="fc-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="fc-title">Trusted Since 2010</div>
+        <p class="fc-desc">Over 3,700 satisfied clients speak to our consistency, integrity, and commitment to delivering real value in every transaction.</p>
+        <div class="fc-num">04</div>
+      </div>
+      <div class="feature-card reveal" style="transition-delay:0.4s">
+        <div class="fc-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="8 12 12 16 16 12"/><line x1="12" y1="8" x2="12" y2="16"/></svg>
+        </div>
+        <div class="fc-title">NRI Services</div>
+        <p class="fc-desc">Specialized support for Non-Resident Indians looking to invest in the Gurgaon and Delhi NCR real estate market from abroad.</p>
+        <div class="fc-num">05</div>
+      </div>
+      <div class="feature-card reveal" style="transition-delay:0.5s">
+        <div class="fc-icon">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <div class="fc-title">Maximum ROI</div>
+        <p class="fc-desc">We reduce transaction cycle time and identify opportunities that deliver the highest possible economic value for your investment.</p>
+        <div class="fc-num">06</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION / VISION -->
+<section class="section mv-section">
+  <div class="section-inner">
+    <div style="text-align:center; margin-bottom: 3rem;" class="reveal">
+      <div class="section-tag" style="padding-left:0; padding-right:3rem; position:relative; display:inline-block;">
+        <span style="position:absolute;right:0;top:50%;width:2rem;height:1px;background:var(--gold);"></span>
+        Our Direction
+      </div>
+      <h2 class="section-title" style="margin-bottom:0;">Mission & Vision</h2>
+    </div>
+    <div class="mv-grid">
+      <div class="mv-card mission reveal-left">
+        <div class="label">Our Mission</div>
+        <h3>Empowering Every Client to Make the Right Move</h3>
+        <p>To provide transparent, expert-driven real estate services that empower clients to make informed decisions — whether buying, selling, renting, or investing — while building lasting relationships founded on trust and results.</p>
+        <div class="mv-deco"></div>
+      </div>
+      <div class="mv-card vision reveal-right">
+        <div class="label">Our Vision</div>
+        <h3>To Be the Most Trusted Name in NCR Real Estate</h3>
+        <p>To grow steadily and carefully as the leading real estate consultancy in Delhi NCR — known for our deep market understanding, professional integrity, and our ability to transform real estate aspirations into reality for every client we serve.</p>
+        <div class="mv-deco"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner reveal">
+    <div class="section-tag" style="color:var(--gold); display:block; text-align:center; padding-left:0; margin-bottom:1rem;">
+      Ready to Begin?
+    </div>
+    <h2>Let's Turn Your <em>Real Estate Dream</em> Into Reality</h2>
+    <p>Whether you're looking to buy, sell, rent, or invest — our experts are ready to guide you with complete transparency and market expertise.</p>
+    <div class="cta-btns">
+      <a href="tel:+918860606770" class="btn-gold" style="font-size:1rem; padding: 1rem 2.5rem;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.97 11 19.79 19.79 0 01.9 2.38 2 2 0 012.88.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call for Free Consultation
+      </a>
+      <a href="#" class="btn-outline" style="font-size:1rem; padding: 1rem 2.5rem;">
+        View Properties →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo">Dreamworld Properties</span>
+      <p>A trusted real estate consultancy in Gurgaon since 2010. Serving residents and NRIs with expert advice and transparent services across Delhi NCR.</p>
+      <div class="social-links">
+        <a href="#">f</a>
+        <a href="#">in</a>
+        <a href="#">yt</a>
+        <a href="#">ig</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Our Services</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#">Buy Property</a></li>
+        <li><a href="#">Sell Property</a></li>
+        <li><a href="#">Rent Property</a></li>
+        <li><a href="#">NRI Services</a></li>
+        <li><a href="#">Investment</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="#">8, Bodhi Marg, DLF Phase 1</a></li>
+        <li><a href="#">Gurugram, Haryana 122018</a></li>
+        <li><a href="tel:+918860606770">+91 886 060 677</a></li>
+        <li><a href="#">info@dreamworldproperties.in</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Dreamworld Properties. All rights reserved.</span>
+    <span>Made with <span>♥</span> in Gurgaon</span>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Counter animation
+  function animateCounter(el, target, duration = 2000) {
+    let start = 0;
+    const step = target / (duration / 16);
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= target) { start = target; clearInterval(timer); }
+      el.textContent = Math.floor(start).toLocaleString();
+    }, 16);
+  }
+
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const nums = e.target.querySelectorAll('.stat-num');
+        nums.forEach(n => {
+          const val = parseInt(n.textContent.replace(/,/g,''));
+          const plus = n.querySelector('.plus');
+          n.textContent = '0';
+          if (plus) n.appendChild(plus);
+          animateCounter(n, val);
+        });
+        statObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.stats-grid').forEach(el => statObserver.observe(el));
+</script>
+</body>
+</html>
